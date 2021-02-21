@@ -31,11 +31,11 @@ public class PackageGroup {
     }
 
     public String printWithFee() {
-        return weight + " " + this.getPostalCode() + " " + totalFee;
+        return String.format("%s %.2f", this.printWithoutFee(), totalFee);
     }
 
     public String printWithoutFee() {
-        return weight + " " + this.getPostalCode();
+        return String.format("%s %.3f", this.getPostalCode(), weight);
     }
 
     public List<Package> getPackages() {

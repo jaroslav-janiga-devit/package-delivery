@@ -35,8 +35,12 @@ public class FileReader {
             System.out.println("Packages not provided.");
             return;
         }
-        manager.addPackages(readFromFile(args[0]));
-        System.out.println("Packages has been read from file.");
+        try{
+            manager.addPackages(readFromFile(args[0]));
+            System.out.println("Packages has been read from file.");
+        }catch (UserNotificationException une) {
+            System.out.println("Packages are not loaded because: " + une.getDescription());
+        }
     }
 
     /**

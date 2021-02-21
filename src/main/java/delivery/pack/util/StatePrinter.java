@@ -31,8 +31,11 @@ public class StatePrinter implements Runnable{
     public void run() {
         while (control.get()){
             try {
-                Thread.sleep(60000);
+                System.out.println();
+                System.out.println("Current state:");
                 packageManager.printPackages();
+                System.out.println();
+                Thread.sleep(60000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

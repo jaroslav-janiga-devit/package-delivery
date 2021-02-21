@@ -27,19 +27,6 @@ public class FileReaderTest {
         assertEquals(0,packageManager.getPackages().size());
     }
 
-    /**
-     * asserting exception that says the file does not exists
-     * there is a typo in the file name
-     */
-    @Test
-    public void readPackagesTestFail(){
-        PackageManager packageManager = new PackageManager();
-        UserNotificationException userNotificationException = assertThrows(UserNotificationException.class, () -> {
-            FileReader.readPackagesFromFile(new String[]{"src/test/resources/packags.txt"}, packageManager);
-        });
-
-        assertThat(userNotificationException.getDescription(),containsString("File cannot be read because: "));
-    }
 
     @Test
     public void readFeesTestSuccess(){
