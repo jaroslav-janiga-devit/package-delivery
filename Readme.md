@@ -21,3 +21,16 @@
 
 #### Example: ####
 java -jar ./package-delivery-jar-with-dependencies.jar packages.txt fees.txt
+
+## Exception handling ##
+
+It is a simple command line application, so it is just an example how it can be done.
+Exception called UserNotificationException is thrown when some issue appears. 
+It also contains some brief description of what has happened.
+
+### Error states ###
+
+1. if a file, which is provided, does not exist then a user is notified by a message in command line
+The applies to both cases a file for packages, and a file for fees
+2. if format of fee or package in the file is wrong then  the user is notified and application starts normally
+3. if format of package is not met in command line interface then user is notified, and it can try again. 
